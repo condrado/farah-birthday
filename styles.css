@@ -187,14 +187,13 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
   z-index: 6;
   bottom: calc(env(safe-area-inset-bottom) + 50px);
   left: 50%;
-  width: 65px;
+  width: 73px;
   height: 120px;
   transform: translateX(-50%);
   background-image: url("images/goku-run.png");
   background-repeat: no-repeat;
   background-position: 0 0;
-  background-size: 600% 100%;
-  image-rendering: pixelated;
+  background-size: auto 100%;
   filter: drop-shadow(0 5px 2px rgba(44, 49, 28, .34));
   pointer-events: none;
 }
