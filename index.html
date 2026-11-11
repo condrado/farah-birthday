@@ -35,11 +35,15 @@
         <span id="intro-label">GUÍA DEL JUEGO</span>
         <button class="dialog-close" id="intro-close" type="button" aria-label="Minimizar guía">×</button>
       </div>
-      <p class="dialog-index" id="intro-kicker">AVENTURA DE CUMPLEAÑOS</p>
-      <h2 id="intro-title"><span class="visually-hidden">Título de bienvenida</span></h2>
-      <p class="dialog-description" id="intro-description"></p>
-      <ul class="intro-reminders" id="intro-reminders"></ul>
-      <button class="primary-button dialog-done" id="intro-start" type="button"><span id="intro-start-label">Empezar recorrido</span> <span aria-hidden="true">→</span></button>
+      <div class="dialog-content">
+        <p class="dialog-index" id="intro-kicker">AVENTURA DE CUMPLEAÑOS</p>
+        <h2 id="intro-title"><span class="visually-hidden">Título de bienvenida</span></h2>
+        <p class="dialog-description" id="intro-description"></p>
+        <ul class="intro-reminders" id="intro-reminders"></ul>
+      </div>
+      <div class="dialog-footer">
+        <button class="primary-button dialog-done" id="intro-start" type="button"><span id="intro-start-label">Empezar recorrido</span> <span aria-hidden="true">→</span></button>
+      </div>
     </dialog>
 
     <dialog class="test-dialog" id="test-dialog" aria-labelledby="dialog-title">
@@ -47,11 +51,15 @@
         <span id="dialog-stop-label">PARADA</span>
         <button class="dialog-close" id="dialog-close" type="button" aria-label="Cerrar prueba">×</button>
       </div>
-      <p class="dialog-index" id="dialog-index">PRUEBA</p>
-      <h2 id="dialog-title"><span class="visually-hidden">Nombre de la prueba</span></h2>
-      <p class="dialog-description" id="dialog-description"></p>
-      <div class="dialog-rule"><span id="dialog-rule-label">REGLA DE LA MISIÓN</span><p id="dialog-rule-text"></p></div>
-      <button class="primary-button dialog-done" id="dialog-done" type="button"><span id="dialog-done-label">¡Entendido!</span> <span aria-hidden="true">→</span></button>
+      <div class="dialog-content">
+        <p class="dialog-index" id="dialog-index">PRUEBA</p>
+        <h2 id="dialog-title"><span class="visually-hidden">Nombre de la prueba</span></h2>
+        <p class="dialog-description" id="dialog-description"></p>
+        <div class="dialog-rule"><span id="dialog-rule-label">REGLA DE LA MISIÓN</span><p id="dialog-rule-text"></p></div>
+      </div>
+      <div class="dialog-footer">
+        <button class="primary-button dialog-done" id="dialog-done" type="button"><span id="dialog-done-label">¡Entendido!</span> <span aria-hidden="true">→</span></button>
+      </div>
     </dialog>
   </body>
 </html>

@@ -195,9 +195,14 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 }
 
 .test-dialog {
-  width: min(440px, calc(100% - 28px));
-  max-height: min(82vh, 680px);
-  overflow-y: auto;
+  position: fixed;
+  inset: 16px;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  overflow: hidden;
   padding: 0;
   border: 2px solid #725434;
   border-radius: 8px;
@@ -207,23 +212,41 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 }
 
 .test-dialog::backdrop { background: rgba(35, 57, 34, .68); }
-.test-dialog[open] { animation: dialog-in .22s ease-out; }
+.test-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  animation: dialog-in .22s ease-out;
+}
 
 @keyframes dialog-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .dialog-topline {
   display: flex;
+  flex: 0 0 auto;
   justify-content: space-between;
   align-items: center;
   gap: 8px;
   padding: 12px 15px;
   border-bottom: 1px solid #d5bd8c;
   color: #80643e;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
+}
+
+.dialog-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.dialog-footer {
+  flex: 0 0 auto;
+  padding: 18px 20px 20px;
+  border-top: 1px solid rgba(128, 100, 62, .2);
 }
 
 .dialog-close {
@@ -234,13 +257,13 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
-  font-size: 21px;
+  font-size: 23px;
   line-height: 1;
 }
 
-.dialog-index { margin: 22px 20px 7px; color: var(--orange); font-size: 10px; font-weight: 700; }
-.test-dialog h2 { margin: 0 20px; font-size: 28px; line-height: 1.1; }
-.dialog-description { margin: 13px 20px 20px; color: #55574f; font-size: 14px; line-height: 1.6; }
+.dialog-index { margin: 22px 20px 7px; color: var(--orange); font-size: 12px; font-weight: 700; }
+.test-dialog h2 { margin: 0 20px; font-size: 30px; line-height: 1.1; }
+.dialog-description { margin: 13px 20px 20px; color: #55574f; font-size: 16px; line-height: 1.6; }
 
 .dialog-rule {
   margin: 0 20px;
@@ -249,23 +272,23 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
   background: rgba(255, 255, 255, .42);
 }
 
-.dialog-rule > span { color: #80643e; font-size: 9px; font-weight: 700; }
-.dialog-rule p { margin: 7px 0 0; font-size: 12px; line-height: 1.5; }
+.dialog-rule > span { color: #80643e; font-size: 11px; font-weight: 700; }
+.dialog-rule p { margin: 7px 0 0; font-size: 14px; line-height: 1.5; }
 
 .dialog-done {
-  width: calc(100% - 40px);
+  width: 100%;
   min-height: 46px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 9px;
-  margin: 18px 20px 20px;
+  margin: 0;
   border: 2px solid #87371e;
   border-radius: 4px;
   background: var(--orange);
   color: white;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -286,19 +309,19 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 .intro-reminders li > span {
   padding-top: 2px;
   color: var(--orange);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
 }
 
 .intro-reminders p {
   margin: 0;
   color: #55574f;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.45;
 }
 
 .intro-dialog .dialog-index { margin-top: 19px; }
-.intro-dialog h2 { font-size: 26px; }
+.intro-dialog h2 { font-size: 28px; }
 .intro-dialog .dialog-description { margin-bottom: 12px; }
 
 .intro-reopen {
