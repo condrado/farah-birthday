@@ -1,78 +1,16 @@
-const stops = [
-  {
-    name: "Puerta del Sol",
-    tests: [
-      {
-        name: "Quién es quién",
-        description: "Poned a prueba vuestra memoria: cada persona recibe pistas sobre alguien del grupo y tendrá que descubrir de quién se trata.",
-        rule: "No se puede decir el nombre. Ganáis un punto por cada identidad acertada."
-      }
-    ]
-  },
-  {
-    name: "Plaza de Callao",
-    tests: [
-      {
-        name: "Photo challenge",
-        description: "Recibid una lista de fotos que el equipo debe recrear por la zona. Buscad el encuadre, repartid los papeles y guardad la prueba.",
-        rule: "Completad todas las fotos antes de seguir a la próxima parada."
-      }
-    ]
-  },
-  {
-    name: "Plaza de España",
-    tests: [
-      {
-        name: "Reconstruir la frase",
-        description: "Las palabras de una frase se han mezclado. Ordenadlas en equipo para descubrir el mensaje secreto.",
-        rule: "Cada persona solo puede mover una palabra por turno."
-      }
-    ]
-  },
-  {
-    name: "Templo de Debod",
-    tests: [
-      {
-        name: "Encuentra la Bola",
-        description: "Una Bola de Dragón se ha escondido cerca. Seguid las pistas y explorad con atención, sin salir de las zonas permitidas.",
-        rule: "No hace falta mover ni tocar nada del entorno para encontrarla."
-      }
-    ]
-  },
-  {
-    name: "Plaza de Oriente",
-    tests: [
-      {
-        name: "Danza fusión",
-        description: "En parejas, sincronizad los movimientos de la danza fusión. La coordinación importa más que la coreografía perfecta.",
-        rule: "El equipo decide si la fusión ha salido bien. ¡A la cuenta de tres!"
-      }
-    ]
-  },
-  {
-    name: "Plaza Mayor",
-    tests: [
-      {
-        name: "Blind test",
-        description: "Escuchad unos segundos de música y adivinad la canción, la serie o el personaje al que pertenece.",
-        rule: "Decid la respuesta antes de que termine el fragmento. Un punto por acierto."
-      },
-      {
-        name: "Cuadro colectivo",
-        description: "Cada persona añade un detalle al mismo dibujo. Al final, el grupo tendrá una ilustración hecha entre todos.",
-        rule: "Por turnos, cada participante dibuja una parte sin borrar las anteriores."
-      }
-    ]
-  }
-];
-
+const content = window.GAME_CONTENT;
+const stops = content.stops;
 const routeStops = document.querySelector("#route-stops");
 const routeAvatar = document.querySelector("#route-avatar");
 const testDialog = document.querySelector("#test-dialog");
+const introDialog = document.querySelector("#intro-dialog");
+const introReopen = document.querySelector("#intro-reopen");
+const introReminders = document.querySelector("#intro-reminders");
 const dialogClose = document.querySelector("#dialog-close");
 const dialogDone = document.querySelector("#dialog-done");
 const SPRITE_FRAME_COUNT = 6;
 const SCROLL_PER_FRAME = 24;
+const STOP_COPY_FADE_DISTANCE = 220;
 let previousScrollY = window.scrollY;
 let distanceSinceFrame = 0;
 let currentSpriteFrame = 0;
@@ -81,11 +19,12 @@ function renderStops() {
   routeStops.innerHTML = stops.map((stop, index) => {
     const testNames = stop.tests.map((test) => test.name).join(" + ");
     const marker = String(index + 1).padStart(2, "0");
+    const openLabel = stop.tests.length > 1 ? content.labels.openTests : content.labels.openTest;
     return `
       <div class="route-stop">
-        <button class="stop-marker" type="button" data-open-stop="${index}" aria-label="Abrir prueba${stop.tests.length > 1 ? "s" : ""} de ${stop.name}"><span>${marker}</span></button>
-        <button class="stop-copy" type="button" data-open-stop="${index}" aria-label="Abrir prueba${stop.tests.length > 1 ? "s" : ""} de ${stop.name}">
-          <span class="stop-meta">PARADA ${String(index + 1).padStart(2, "0")}</span>
+        <button class="stop-marker" type="button" data-open-stop="${index}" aria-label="${openLabel} ${stop.name}"><span>${marker}</span></button>
+        <button class="stop-copy" type="button" data-open-stop="${index}" aria-label="${openLabel} ${stop.name}">
+          <span class="stop-meta">${content.labels.stop} ${String(index + 1).padStart(2, "0")}</span>
           <span class="stop-name">${stop.name}</span>
           <span class="stop-tests">${testNames}</span>
         </button>
@@ -97,6 +36,23 @@ function renderStops() {
   });
 }
 
+function renderContent() {
+  document.querySelector("#intro-label").textContent = content.labels.guide;
+  document.querySelector("#intro-kicker").textContent = content.labels.introKicker;
+  document.querySelector("#intro-title").textContent = content.intro.title;
+  document.querySelector("#intro-description").textContent = content.intro.description;
+  document.querySelector("#intro-start-label").textContent = content.labels.startRoute;
+  document.querySelector("#intro-close").setAttribute("aria-label", content.labels.minimizeGuide);
+  introReopen.setAttribute("aria-label", content.labels.openGuide);
+  introReopen.title = content.labels.openGuide;
+  introReminders.innerHTML = content.intro.reminders.map((reminder, index) => `
+    <li><span>${String(index + 1).padStart(2, "0")}</span><p>${reminder}</p></li>
+  `).join("");
+  document.querySelector("#dialog-rule-label").textContent = content.labels.missionRule;
+  document.querySelector("#dialog-close").setAttribute("aria-label", content.labels.closeTest);
+  document.querySelector("#dialog-done-label").textContent = content.labels.acknowledge;
+}
+
 function openStopTests(stopIndex) {
   showTest(stopIndex, 0);
 }
@@ -104,8 +60,9 @@ function openStopTests(stopIndex) {
 function showTest(stopIndex, testIndex) {
   const stop = stops[stopIndex];
   const test = stop.tests[testIndex];
-  document.querySelector("#dialog-stop-label").textContent = `PARADA ${String(stopIndex + 1).padStart(2, "0")} · ${stop.name.toUpperCase()}`;
-  document.querySelector("#dialog-index").textContent = `PRUEBA ${String(getTestNumber(stopIndex, testIndex)).padStart(2, "0")} DE 07`;
+  const totalTests = stops.reduce((total, item) => total + item.tests.length, 0);
+  document.querySelector("#dialog-stop-label").textContent = `${content.labels.stop} ${String(stopIndex + 1).padStart(2, "0")} · ${stop.name.toUpperCase()}`;
+  document.querySelector("#dialog-index").textContent = `${content.labels.test} ${String(getTestNumber(stopIndex, testIndex)).padStart(2, "0")} ${content.labels.of} ${String(totalTests).padStart(2, "0")}`;
   document.querySelector("#dialog-title").textContent = test.name;
   document.querySelector("#dialog-description").textContent = test.description;
   document.querySelector("#dialog-rule-text").textContent = test.rule;
@@ -124,12 +81,51 @@ function updateGokuSprite() {
   previousScrollY = currentScrollY;
 
   const framesToAdvance = Math.floor(distanceSinceFrame / SCROLL_PER_FRAME);
-  if (framesToAdvance === 0) return;
+  if (framesToAdvance > 0) {
+    currentSpriteFrame = (currentSpriteFrame + framesToAdvance) % SPRITE_FRAME_COUNT;
+    distanceSinceFrame %= SCROLL_PER_FRAME;
+    routeAvatar.style.backgroundPositionX = `${currentSpriteFrame * 20}%`;
+  }
 
-  currentSpriteFrame = (currentSpriteFrame + framesToAdvance) % SPRITE_FRAME_COUNT;
-  distanceSinceFrame %= SCROLL_PER_FRAME;
-  routeAvatar.style.backgroundPositionX = `${currentSpriteFrame * 20}%`;
+  updateStopCopyScales();
 }
+
+function updateStopCopyScales() {
+  const avatarRect = routeAvatar.getBoundingClientRect();
+  const avatarCenterY = avatarRect.top + avatarRect.height / 2;
+  const cards = [...routeStops.querySelectorAll(".stop-copy")].map((card) => {
+    const rect = card.getBoundingClientRect();
+    const cardCenterY = rect.top + rect.height / 2;
+    const scale = Math.min(1, Math.abs(avatarCenterY - cardCenterY) / STOP_COPY_FADE_DISTANCE);
+    return { card, scale };
+  });
+
+  cards.forEach(({ card, scale }) => {
+    card.style.setProperty("--approach-scale", scale.toFixed(3));
+    card.style.setProperty("--approach-opacity", scale.toFixed(3));
+    card.style.pointerEvents = scale < 0.15 ? "none" : "";
+  });
+}
+
+function showIntroDialog() {
+  introReopen.hidden = true;
+  introDialog.showModal();
+}
+
+function minimizeIntroDialog() {
+  introDialog.close();
+  introReopen.hidden = false;
+}
+
+introDialog.addEventListener("cancel", () => {
+  introReopen.hidden = false;
+});
+introDialog.addEventListener("click", (event) => {
+  if (event.target === introDialog) minimizeIntroDialog();
+});
+document.querySelector("#intro-close").addEventListener("click", minimizeIntroDialog);
+document.querySelector("#intro-start").addEventListener("click", minimizeIntroDialog);
+introReopen.addEventListener("click", showIntroDialog);
 
 dialogClose.addEventListener("click", () => testDialog.close());
 dialogDone.addEventListener("click", () => {
@@ -147,9 +143,12 @@ testDialog.addEventListener("click", (event) => {
   if (event.target === testDialog) testDialog.close();
 });
 
+renderContent();
 renderStops();
+updateStopCopyScales();
 window.addEventListener("scroll", updateGokuSprite, { passive: true });
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 window.addEventListener("load", () => {
   window.scrollTo(0, document.documentElement.scrollHeight);
+  showIntroDialog();
 }, { once: true });

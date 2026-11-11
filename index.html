@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="content.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -25,16 +26,32 @@
       <div class="route-avatar" id="route-avatar" aria-hidden="true"></div>
     </main>
 
+    <button class="intro-reopen" id="intro-reopen" type="button" aria-label="Abrir guía y recordatorios" title="Abrir guía y recordatorios" hidden>
+      <img src="images/capsule.png" alt="">
+    </button>
+
+    <dialog class="test-dialog intro-dialog" id="intro-dialog" aria-labelledby="intro-title">
+      <div class="dialog-topline">
+        <span id="intro-label">GUÍA DEL JUEGO</span>
+        <button class="dialog-close" id="intro-close" type="button" aria-label="Minimizar guía">×</button>
+      </div>
+      <p class="dialog-index" id="intro-kicker">AVENTURA DE CUMPLEAÑOS</p>
+      <h2 id="intro-title"><span class="visually-hidden">Título de bienvenida</span></h2>
+      <p class="dialog-description" id="intro-description"></p>
+      <ul class="intro-reminders" id="intro-reminders"></ul>
+      <button class="primary-button dialog-done" id="intro-start" type="button"><span id="intro-start-label">Empezar recorrido</span> <span aria-hidden="true">→</span></button>
+    </dialog>
+
     <dialog class="test-dialog" id="test-dialog" aria-labelledby="dialog-title">
       <div class="dialog-topline">
-        <span id="dialog-stop-label">PARADA 1 · PUERTA DEL SOL</span>
+        <span id="dialog-stop-label">PARADA</span>
         <button class="dialog-close" id="dialog-close" type="button" aria-label="Cerrar prueba">×</button>
       </div>
-      <p class="dialog-index" id="dialog-index">PRUEBA 01</p>
-      <h2 id="dialog-title">Quién es quién</h2>
+      <p class="dialog-index" id="dialog-index">PRUEBA</p>
+      <h2 id="dialog-title"><span class="visually-hidden">Nombre de la prueba</span></h2>
       <p class="dialog-description" id="dialog-description"></p>
-      <div class="dialog-rule"><span>REGLA DE LA MISIÓN</span><p id="dialog-rule-text"></p></div>
-      <button class="primary-button dialog-done" id="dialog-done" type="button">¡Entendido! <span aria-hidden="true">→</span></button>
+      <div class="dialog-rule"><span id="dialog-rule-label">REGLA DE LA MISIÓN</span><p id="dialog-rule-text"></p></div>
+      <button class="primary-button dialog-done" id="dialog-done" type="button"><span id="dialog-done-label">¡Entendido!</span> <span aria-hidden="true">→</span></button>
     </dialog>
   </body>
 </html>
