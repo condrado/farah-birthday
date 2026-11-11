@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#78b84a">
-    <meta name="description" content="Guía interactiva de una aventura de cumpleaños por Madrid.">
+    <meta id="document-description" name="description" content="Guía interactiva de una aventura de cumpleaños por Madrid.">
     <title>La ruta de las siete pruebas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
   <body>
     <main class="page-shell" id="inicio">
       <header class="game-header">
-        <h1 id="page-title"><img class="game-logo" src="images/logo.png" alt="Farah and the Dragon Ball"><span class="visually-hidden">La ruta de las siete pruebas</span></h1>
+        <h1 id="page-title"><img class="game-logo" id="game-logo" src="images/logo.png" alt="Farah and the Dragon Ball"><span class="visually-hidden" id="page-title-text">La ruta de las siete pruebas</span></h1>
       </header>
 
       <section class="game-world" id="game-world" aria-label="Recorrido por las paradas">
@@ -33,6 +33,7 @@
     <dialog class="test-dialog intro-dialog" id="intro-dialog" aria-labelledby="intro-title">
       <div class="dialog-topline">
         <span id="intro-label">GUÍA DEL JUEGO</span>
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Cambiar a francés">Français</button>
         <button class="dialog-close" id="intro-close" type="button" aria-label="Minimizar guía">×</button>
       </div>
       <div class="dialog-content">
@@ -49,13 +50,20 @@
     <dialog class="test-dialog" id="test-dialog" aria-labelledby="dialog-title">
       <div class="dialog-topline">
         <span id="dialog-stop-label">PARADA</span>
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Cambiar a francés">Français</button>
         <button class="dialog-close" id="dialog-close" type="button" aria-label="Cerrar prueba">×</button>
       </div>
-      <div class="dialog-content">
-        <p class="dialog-index" id="dialog-index">PRUEBA</p>
-        <h2 id="dialog-title"><span class="visually-hidden">Nombre de la prueba</span></h2>
-        <p class="dialog-description" id="dialog-description"></p>
-        <div class="dialog-rule"><span id="dialog-rule-label">REGLA DE LA MISIÓN</span><p id="dialog-rule-text"></p></div>
+      <div class="dialog-body">
+        <div class="dialog-content">
+          <p class="dialog-index" id="dialog-index">PRUEBA</p>
+          <h2 id="dialog-title"><span class="visually-hidden">Nombre de la prueba</span></h2>
+          <p class="dialog-description" id="dialog-description"></p>
+          <div class="dialog-rule"><span id="dialog-rule-label">REGLA DE LA MISIÓN</span><p id="dialog-rule-text"></p></div>
+        </div>
+        <a class="dialog-map-button" id="dialog-map-button" href="#" target="_blank" rel="noopener noreferrer" aria-label="Abrir en Google Maps" hidden>
+          <span class="dialog-map-label" id="dialog-map-label">Ubicación</span>
+          <img src="images/radar.png" alt="">
+        </a>
       </div>
       <div class="dialog-footer">
         <button class="primary-button dialog-done" id="dialog-done" type="button"><span id="dialog-done-label">¡Entendido!</span> <span aria-hidden="true">→</span></button>
