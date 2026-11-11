@@ -85,6 +85,10 @@ function setRichText(element, text) {
       return;
     }
     if (node.nodeType !== Node.ELEMENT_NODE) return;
+    if (node.tagName === "BR") {
+      parent.append(document.createElement("br"));
+      return;
+    }
 
     const isBold = node.tagName === "B" || node.tagName === "STRONG";
     let childParent = parent;

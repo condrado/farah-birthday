@@ -97,6 +97,11 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
   background-size: 100% 100%;
 }
 
+.route-stops::after {
+  content: "";
+  flex: 0 0 max(0px, calc(100svh - 330px));
+}
+
 .route-stop {
   position: relative;
   flex: 1 1 0;
@@ -273,6 +278,7 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -283,6 +289,7 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .dialog-map-button img {

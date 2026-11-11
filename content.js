@@ -27,11 +27,11 @@ window.GAME_CONTENT = {
       title: "¡A por las siete bolas de dragón!",
       description: "Seis paradas por Madrid, siete pruebas y todos juntos en una aventura de Dragon Ball.",
       reminders: [
-        "Para descubrir cada parada en esta web mueve a Goku por el camino hacia el Norte.",
+        "Para descubrir cada parada en esta web, mueve a Goku por el camino hacia el norte.",
         "Toca cada una de las paradas para leer el detalle de esa parada.",
-        "Esta guia estará disponible durante todo el recorrido en la parte inferior derecha, en el icono de la capsula <strong>'info'</strong>.",
+        "Esta guía estará disponible durante todo el recorrido en la parte inferior derecha, en el icono de la cápsula <strong>«info»</strong>.",
         "No olvides traer unas <strong>gafas de sol</strong>.",
-        "Comenzamos en <strong>Café Mies</strong> en <a href='https://maps.google.com/?cid=16979313154604772280' target='_blank'><strong>Av. del General Perón, 4, Tetuán, 28020 Madrid</strong></a> a las <strong>16h</strong>."
+        "Comenzamos en <strong>Café Mies</strong>, en <a href='https://maps.google.com/?cid=16979313154604772280' target='_blank'><strong>Av. del General Perón, 4, Tetuán, 28020 Madrid</strong></a>, a las <strong>16:00</strong>."
       ]
     },
     stops: [
@@ -47,63 +47,68 @@ window.GAME_CONTENT = {
         ]
       },
       {
-        name: "Plaza de Callao",
+        name: "Parque Perón",
         tests: [
           {
-            name: "Photo challenge",
-            address: "https://www.google.com/maps/search/?api=1&query=Plaza+de+Callao%2C+Madrid",
-            description: "Recibid una lista de fotos que el equipo debe recrear por la zona. Buscad el encuadre, repartid los papeles y guardad la prueba.",
-            rule: "Completad todas las fotos antes de seguir a la próxima parada."
+            name: "Reto fotográfico",
+            address: "https://maps.google.com/?cid=1124523401195225107",
+            description: "Farah se convierte en la fotógrafa del evento. El objetivo es conseguir seis fotografías que cumplan con la lista de peticiones en un tiempo límite de cuatro minutos, utilizando a los invitados como modelos.",
+            rule: "Obtendrá la segunda Bola de Dragón si consigue tomar al menos 4 de las 6 fotos solicitadas dentro del tiempo límite.<br>Lista de peticiones:<br>- La última cena de Jesucristo<br>- Una máquina infernal<br>- La oficina de Garaje de Ideas<br>- Una pasarela de moda<br>- Un coro de niños<br>- Una selva tropical<br>- Un concierto con pogo<br>- Un grupo de palomas que ha visto un trozo de pan<br>- Una cena romántica en un restaurante de cinco estrellas<br>- Tres velas fundidas"
           }
         ]
       },
       {
-        name: "Plaza de España",
+        name: "Esquina de la Calle San Germán",
         tests: [
           {
             name: "Reconstruir la frase",
-            address: "https://www.google.com/maps/search/?api=1&query=Plaza+de+Espa%C3%B1a%2C+Madrid",
-            description: "Las palabras de una frase se han mezclado. Ordenadlas en equipo para descubrir el mensaje secreto.",
-            rule: "Cada persona solo puede mover una palabra por turno."
+            address: "https://maps.google.com/?cid=7236403782645840986",
+            description: "Sin previo aviso, los cómplices se pondrán gafas de sol y comenzarán a repetir únicamente una palabra clave asignada (ya sea en bucle o cada vez que Farah les dirija la palabra). El objetivo de Farah es descifrar qué está ocurriendo y descubrir la frase oculta.",
+            rule: "Obtendrá la tercera Bola de Dragón en cuanto se descubra la frase oculta.<br><br><strong>Instrucciones para los cómplices:</strong><br>En completo silencio, pónganse las gafas de sol al mismo tiempo. A partir de ese momento, está prohibido hablar con normalidad: repitan únicamente la palabra que se les haya asignado, en bucle o cada vez que Farah les pregunte algo."
           }
         ]
       },
       {
-        name: "Templo de Debod",
+        name: "Parque de Monos",
         tests: [
           {
             name: "Encuentra la Bola",
-            address: "https://www.google.com/maps/search/?api=1&query=Templo+de+Debod%2C+Madrid",
-            description: "Una Bola de Dragón se ha escondido cerca. Seguid las pistas y explorad con atención, sin salir de las zonas permitidas.",
-            rule: "No hace falta mover ni tocar nada del entorno para encontrarla."
+            address: "https://maps.google.com/?cid=7599943738742930448",
+            description: "Hay una bola oculta en la zona del parque de monos.",
+            rule: "El objetivo de Farah es rastrear la zona y encontrarla para superar la prueba. Puede pedir ayuda si lo necesita."
           }
         ]
       },
       {
-        name: "Plaza de Oriente",
+        name: "Parque Sahagún",
         tests: [
           {
             name: "Danza fusión",
-            address: "https://www.google.com/maps/search/?api=1&query=Plaza+de+Oriente%2C+Madrid",
-            description: "En parejas, sincronizad los movimientos de la danza fusión. La coordinación importa más que la coreografía perfecta.",
-            rule: "El equipo decide si la fusión ha salido bien. ¡A la cuenta de tres!"
+            address: "https://maps.google.com/?cid=6906512151522153031",
+            description: "Una prueba de creatividad y coordinación por parejas en la que los invitados inventan su propio baile sincronizado, que será evaluado por un jurado de honor.",
+            rule: "Instrucciones:<br><br>- Farah debe organizar a todos los invitados en parejas (incluida ella misma) y reservar a Mariana (su madre) para un papel especial.<br><br>- Cada pareja debe crear y ensayar una mini «danza de fusión» de entre 4 y 5 segundos. Mariana actuará como jurado oficial y elegirá a la pareja con la mejor coreografía.<br><br>- Una vez anunciado el equipo ganador, todos los asistentes deben aprender y bailar juntos la coreografía ganadora."
           }
         ]
       },
       {
-        name: "Plaza Mayor",
+        name: "Casa Martín",
         tests: [
           {
             name: "Blind test",
-            address: "https://www.google.com/maps/search/?api=1&query=Plaza+Mayor%2C+Madrid",
-            description: "Escuchad unos segundos de música y adivinad la canción, la serie o el personaje al que pertenece.",
-            rule: "Decid la respuesta antes de que termine el fragmento. Un punto por acierto."
-          },
+            address: "https://maps.google.com/?cid=5046164161605831220",
+            description: "Una prueba de agudeza musical y oído fino donde los invitados pondrán a prueba la memoria sonora de Farah tarareando temas conocidos.",
+            rule: "Los invitados irán pasando uno por uno para tararear una canción sin usar palabras ni sonidos instrumentales.<br><br>El objetivo de Farah es identificar y adivinar el nombre del tema (o el artista) que interpreta cada participante.<br><br>Conseguirá la Bola de Dragón si adivina 6 de las 12 canciones."
+          }
+        ]
+      },
+      {
+        name: "Casa Martín",
+        tests: [
           {
             name: "Cuadro colectivo",
-            address: "https://www.google.com/maps/search/?api=1&query=Plaza+Mayor%2C+Madrid",
-            description: "Cada persona añade un detalle al mismo dibujo. Al final, el grupo tendrá una ilustración hecha entre todos.",
-            rule: "Por turnos, cada participante dibuja una parte sin borrar las anteriores."
+            address: "https://maps.google.com/?cid=5046164161605831220",
+            description: "Una prueba artística y de observación en la que los invitados pondrán a prueba su talento dibujándose unos a otros, para culminar en un duelo de retratos muy especial.",
+            rule: "Farah asigna qué invitado dibujará a quién, asegurando que ella y Mariana (su madre) queden emparejadas para retratarse mutuamente.<br><br>Cada participante debe realizar el retrato de la persona que le tocó en su papel o libreta.<br><br>Al finalizar, se exhibirán todos los dibujos y se revelará el resultado de cada retrato."
           }
         ]
       }
@@ -157,63 +162,68 @@ window.GAME_CONTENT = {
         ]
       },
       {
-        name: "Plaza de Callao",
+        name: "Parque Perón",
         tests: [
           {
             name: "Défi photo",
-            address: "https://www.google.com/maps/search/?api=1&query=Plaza+de+Callao%2C+Madrid",
-            description: "Recevez une liste de photos que l'équipe doit recréer dans le quartier. Trouvez le cadrage, répartissez les rôles et gardez une preuve.",
-            rule: "Terminez toutes les photos avant de rejoindre l'étape suivante."
+            address: "https://maps.google.com/?cid=1124523401195225107",
+            description: "Farah devient la photographe de l'événement. Elle doit prendre six photos correspondant à la liste de demandes en quatre minutes, en utilisant les invités comme modèles.",
+            rule: "Farah obtiendra la deuxième Dragon Ball si elle réussit à prendre au moins 4 des 6 photos demandées dans le temps imparti.<br>Liste de demandes :<br>- La Cène de Jésus-Christ<br>- Une machine infernale<br>- Les bureaux de Garaje de Ideas<br>- Un défilé de mode<br>- Une chorale d'enfants<br>- Une forêt tropicale<br>- Un concert avec pogo<br>- Un groupe de pigeons qui a repéré un morceau de pain<br>- Un dîner romantique dans un restaurant cinq étoiles<br>- Trois bougies fondues"
           }
         ]
       },
       {
-        name: "Plaza de España",
+        name: "Esquina de la Calle San Germán",
         tests: [
           {
             name: "Reconstituer la phrase",
-            address: "https://www.google.com/maps/search/?api=1&query=Plaza+de+Espa%C3%B1a%2C+Madrid",
-            description: "Les mots d'une phrase ont été mélangés. Remettez-les dans le bon ordre en équipe pour découvrir le message secret.",
-            rule: "Chaque personne ne peut déplacer qu'un seul mot par tour."
+            address: "https://maps.google.com/?cid=7236403782645840986",
+            description: "Sans prévenir, les complices mettront leurs lunettes de soleil et commenceront à répéter uniquement le mot-clé qui leur a été attribué, soit en boucle, soit chaque fois que Farah leur adressera la parole. Farah devra comprendre ce qui se passe et découvrir la phrase cachée.",
+            rule: "Farah obtiendra la troisième Dragon Ball dès que la phrase cachée sera découverte.<br><br><strong>Instructions pour les complices :</strong><br>En silence complet, mettez vos lunettes de soleil en même temps. À partir de ce moment, il est interdit de parler normalement : répétez uniquement le mot qui vous a été attribué, en boucle ou chaque fois que Farah vous pose une question."
           }
         ]
       },
       {
-        name: "Templo de Debod",
+        name: "Parque de Monos",
         tests: [
           {
             name: "Trouver la boule",
-            address: "https://www.google.com/maps/search/?api=1&query=Templo+de+Debod%2C+Madrid",
-            description: "Une Dragon Ball a été cachée à proximité. Suivez les indices et explorez attentivement, sans quitter les zones autorisées.",
-            rule: "Il n'est pas nécessaire de déplacer ni de toucher quoi que ce soit pour la trouver."
+            address: "https://maps.google.com/?cid=7599943738742930448",
+            description: "Une boule est cachée dans la zone du Parque de Monos.",
+            rule: "Farah doit explorer la zone et trouver la boule pour réussir l'épreuve. Elle peut demander de l'aide si nécessaire."
           }
         ]
       },
       {
-        name: "Plaza de Oriente",
+        name: "Parque Sahagún",
         tests: [
           {
             name: "Danse fusion",
-            address: "https://www.google.com/maps/search/?api=1&query=Plaza+de+Oriente%2C+Madrid",
-            description: "Par deux, synchronisez les mouvements de la danse fusion. La coordination compte davantage que la chorégraphie parfaite.",
-            rule: "L'équipe décide si la fusion a réussi. À trois !"
+            address: "https://maps.google.com/?cid=6906512151522153031",
+            description: "Une épreuve de créativité et de coordination en duo, où les invités inventent leur propre danse synchronisée, évaluée par un jury d'honneur.",
+            rule: "Instructions :<br><br>- Farah doit répartir tous les invités en binômes (elle comprise) et réserver un rôle spécial à Mariana (sa mère).<br><br>- Chaque binôme doit créer et répéter une mini « danse de la fusion » de 4 à 5 secondes. Mariana fera office de juge et choisira le binôme ayant la meilleure chorégraphie.<br><br>- Une fois l'équipe gagnante annoncée, tous les participants devront apprendre et danser ensemble la chorégraphie gagnante."
           }
         ]
       },
       {
-        name: "Plaza Mayor",
+        name: "Casa Martín",
         tests: [
           {
-            name: "Blind test",
-            address: "https://www.google.com/maps/search/?api=1&query=Plaza+Mayor%2C+Madrid",
-            description: "Écoutez quelques secondes de musique et devinez la chanson, la série ou le personnage auquel elle appartient.",
-            rule: "Donnez votre réponse avant la fin de l'extrait. Un point par bonne réponse."
-          },
+            name: "Blind test musical",
+            address: "https://maps.google.com/?cid=5046164161605831220",
+            description: "Une épreuve d'acuité musicale et d'oreille fine : les invités fredonnent des airs connus pour mettre à l'épreuve la mémoire musicale de Farah.",
+            rule: "Les invités passeront un par un pour fredonner une chanson, sans paroles ni sons instrumentaux.<br><br>Farah devra reconnaître et deviner le titre ou l'artiste interprété par chaque personne.<br><br>Elle obtiendra la Dragon Ball si elle devine 6 des 12 chansons."
+          }
+        ]
+      },
+      {
+        name: "Casa Martín",
+        tests: [
           {
             name: "Dessin collectif",
-            address: "https://www.google.com/maps/search/?api=1&query=Plaza+Mayor%2C+Madrid",
-            description: "Chaque personne ajoute un détail au même dessin. À la fin, le groupe aura créé une illustration ensemble.",
-            rule: "À tour de rôle, chaque personne dessine une partie sans effacer les précédentes."
+            address: "https://maps.google.com/?cid=5046164161605831220",
+            description: "Une épreuve artistique et d'observation où les invités mettront leur talent à l'épreuve en se dessinant les uns les autres, avant un duel de portraits très spécial.",
+            rule: "Farah désigne qui dessinera qui, en veillant à ce qu'elle et Mariana (sa mère) soient associées pour se dessiner mutuellement.<br><br>Chaque personne doit dessiner le portrait de la personne qui lui a été attribuée, sur une feuille ou dans un carnet.<br><br>À la fin, tous les dessins seront exposés et le résultat de chaque portrait sera révélé."
           }
         ]
       }
