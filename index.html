@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#78b84a">
+    <meta name="description" content="Guía interactiva de una aventura de cumpleaños por Madrid.">
+    <title>La ruta de las siete pruebas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell" id="inicio">
+      <header class="game-header">
+        <h1 id="page-title"><img class="game-logo" src="images/logo.png" alt="Farah and the Dragon Ball"><span class="visually-hidden">La ruta de las siete pruebas</span></h1>
+      </header>
+
+      <section class="game-world" id="game-world" aria-label="Recorrido por las paradas">
+        <div class="route-stops" id="route-stops"></div>
+      </section>
+
+      <div class="route-avatar" id="route-avatar" aria-hidden="true"></div>
+    </main>
+
+    <dialog class="test-dialog" id="test-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-topline">
+        <span id="dialog-stop-label">PARADA 1 · PUERTA DEL SOL</span>
+        <button class="dialog-close" id="dialog-close" type="button" aria-label="Cerrar prueba">×</button>
+      </div>
+      <p class="dialog-index" id="dialog-index">PRUEBA 01</p>
+      <h2 id="dialog-title">Quién es quién</h2>
+      <p class="dialog-description" id="dialog-description"></p>
+      <div class="dialog-rule"><span>REGLA DE LA MISIÓN</span><p id="dialog-rule-text"></p></div>
+      <button class="primary-button dialog-done" id="dialog-done" type="button">¡Entendido! <span aria-hidden="true">→</span></button>
+    </dialog>
+  </body>
+</html>
