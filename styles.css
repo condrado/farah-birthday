@@ -365,7 +365,7 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 
 .dialog-illustration {
   display: block;
-  width: 100%;
+  width: calc(100% - 40px);
   margin: 18px 20px 0;
   object-fit: contain;
 }
