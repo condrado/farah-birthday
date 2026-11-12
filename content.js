@@ -53,7 +53,7 @@ window.GAME_CONTENT = {
             name: "Reto fotográfico",
             address: "https://maps.google.com/?cid=1124523401195225107",
             description: "Farah se convierte en la fotógrafa del evento. El objetivo es conseguir seis fotografías que cumplan con la lista de peticiones en un tiempo límite de cuatro minutos, utilizando a los invitados como modelos.",
-            rule: "Obtendrá la segunda Bola de Dragón si consigue tomar al menos 4 de las 6 fotos solicitadas dentro del tiempo límite.<br>Lista de peticiones:<br>- La última cena de Jesucristo<br>- Una máquina infernal<br>- La oficina de Garaje de Ideas<br>- Una pasarela de moda<br>- Un coro de niños<br>- Una selva tropical<br>- Un concierto con pogo<br>- Un grupo de palomas que ha visto un trozo de pan<br>- Una cena romántica en un restaurante de cinco estrellas<br>- Tres velas fundidas"
+            rule: "Obtendrá la segunda Bola de Dragón si consigue tomar al menos 4 de las 6 fotos solicitadas dentro del tiempo límite.<br>Lista de peticiones:<br>- Una máquina infernal<br>- La oficina de Garaje de Ideas<br>- Una pasarela de moda<br>- Un coro de niños<br>- Una selva tropical<br>- Un concierto con pogo<br>- Un grupo de palomas que ha visto un trozo de pan<br>- Una cena romántica en un restaurante de cinco estrellas<br>- Tres velas fundidas"
           }
         ]
       },
@@ -168,7 +168,7 @@ window.GAME_CONTENT = {
             name: "Défi photo",
             address: "https://maps.google.com/?cid=1124523401195225107",
             description: "Farah devient la photographe de l'événement. Elle doit prendre six photos correspondant à la liste de demandes en quatre minutes, en utilisant les invités comme modèles.",
-            rule: "Farah obtiendra la deuxième Dragon Ball si elle réussit à prendre au moins 4 des 6 photos demandées dans le temps imparti.<br>Liste de demandes :<br>- La Cène de Jésus-Christ<br>- Une machine infernale<br>- Les bureaux de Garaje de Ideas<br>- Un défilé de mode<br>- Une chorale d'enfants<br>- Une forêt tropicale<br>- Un concert avec pogo<br>- Un groupe de pigeons qui a repéré un morceau de pain<br>- Un dîner romantique dans un restaurant cinq étoiles<br>- Trois bougies fondues"
+            rule: "Farah obtiendra la deuxième Dragon Ball si elle réussit à prendre au moins 4 des 6 photos demandées dans le temps imparti.<br>Liste de demandes :<br>- Une machine infernale<br>- Les bureaux de Garaje de Ideas<br>- Un défilé de mode<br>- Une chorale d'enfants<br>- Une forêt tropicale<br>- Un concert avec pogo<br>- Un groupe de pigeons qui a repéré un morceau de pain<br>- Un dîner romantique dans un restaurant cinq étoiles<br>- Trois bougies fondues"
           }
         ]
       },
