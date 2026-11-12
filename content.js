@@ -86,7 +86,8 @@ window.GAME_CONTENT = {
             name: "Danza fusión",
             address: "https://maps.google.com/?cid=6906512151522153031",
             description: "Una prueba de creatividad y coordinación por parejas en la que los invitados inventan su propio baile sincronizado, que será evaluado por un jurado de honor.",
-            rule: "Instrucciones:<br><br>- Farah debe organizar a todos los invitados en parejas (incluida ella misma) y reservar a Mariana (su madre) para un papel especial.<br><br>- Cada pareja debe crear y ensayar una mini «danza de fusión» de entre 4 y 5 segundos. Mariana actuará como jurado oficial y elegirá a la pareja con la mejor coreografía.<br><br>- Una vez anunciado el equipo ganador, todos los asistentes deben aprender y bailar juntos la coreografía ganadora."
+            rule: "Instrucciones:<br><br>- Farah debe organizar a todos los invitados en parejas (incluida ella misma) y reservar a Mariana (su madre) para un papel especial.<br><br>- Cada pareja debe crear y ensayar una mini «danza de fusión» de entre 4 y 5 segundos. Mariana actuará como jurado oficial y elegirá a la pareja con la mejor coreografía.<br><br>- Una vez anunciado el equipo ganador, todos los asistentes deben aprender y bailar juntos la coreografía ganadora.",
+            illustration: { src: "images/fusion.gif", alt: "Ejemplo de la danza de fusión" }
           }
         ]
       },
@@ -201,7 +202,8 @@ window.GAME_CONTENT = {
             name: "Danse fusion",
             address: "https://maps.google.com/?cid=6906512151522153031",
             description: "Une épreuve de créativité et de coordination en duo, où les invités inventent leur propre danse synchronisée, évaluée par un jury d'honneur.",
-            rule: "Instructions :<br><br>- Farah doit répartir tous les invités en binômes (elle comprise) et réserver un rôle spécial à Mariana (sa mère).<br><br>- Chaque binôme doit créer et répéter une mini « danse de la fusion » de 4 à 5 secondes. Mariana fera office de juge et choisira le binôme ayant la meilleure chorégraphie.<br><br>- Une fois l'équipe gagnante annoncée, tous les participants devront apprendre et danser ensemble la chorégraphie gagnante."
+            rule: "Instructions :<br><br>- Farah doit répartir tous les invités en binômes (elle comprise) et réserver un rôle spécial à Mariana (sa mère).<br><br>- Chaque binôme doit créer et répéter une mini « danse de la fusion » de 4 à 5 secondes. Mariana fera office de juge et choisira le binôme ayant la meilleure chorégraphie.<br><br>- Une fois l'équipe gagnante annoncée, tous les participants devront apprendre et danser ensemble la chorégraphie gagnante.",
+            illustration: { src: "images/fusion.gif", alt: "Exemple de la danse de fusion" }
           }
         ]
       },

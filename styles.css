@@ -202,11 +202,14 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 .test-dialog {
   position: fixed;
   inset: 16px;
-  width: auto;
+  left: 50%;
+  right: auto;
+  width: min(468px, calc(100vw - 32px));
   height: auto;
   max-width: none;
   max-height: none;
   margin: 0;
+  transform: translateX(-50%);
   overflow: hidden;
   padding: 0;
   border: 2px solid #725434;
@@ -359,6 +362,15 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 
 .dialog-rule > span { color: #80643e; font-size: 11px; font-weight: 700; }
 .dialog-rule p { margin: 7px 0 0; font-size: 14px; line-height: 1.5; }
+
+.dialog-illustration {
+  display: block;
+  width: 100%;
+  margin: 18px 20px 0;
+  object-fit: contain;
+}
+
+.dialog-illustration[hidden] { display: none; }
 
 .dialog-done {
   width: 100%;

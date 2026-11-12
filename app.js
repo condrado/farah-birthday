@@ -136,6 +136,16 @@ function renderTestDialog(stopIndex, testIndex) {
   setRichText(document.querySelector("#dialog-description"), test.description);
   setRichText(document.querySelector("#dialog-rule-text"), test.rule);
 
+  const illustration = document.querySelector("#dialog-illustration");
+  illustration.hidden = !test.illustration;
+  if (test.illustration) {
+    illustration.src = test.illustration.src;
+    illustration.alt = test.illustration.alt;
+  } else {
+    illustration.removeAttribute("src");
+    illustration.alt = "";
+  }
+
   const mapButton = document.querySelector("#dialog-map-button");
   mapButton.setAttribute("aria-label", content.labels.openMap);
   document.querySelector("#dialog-map-label").textContent = content.labels.mapLabel;
