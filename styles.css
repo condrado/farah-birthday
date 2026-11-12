@@ -22,7 +22,8 @@ html::-webkit-scrollbar { display: none; }
 
 body {
   min-width: 320px;
-  margin: 0;
+  max-width: 500px;
+  margin: 0 auto;
   overflow-x: hidden;
   color: var(--ink);
   background-color: var(--grass);
@@ -39,7 +40,8 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 
 .page-shell {
   position: relative;
-  width: min(100%, 520px);
+  width: 100%;
+  max-width: 500px;
   min-height: 100svh;
   margin: 0 auto;
 }
@@ -49,7 +51,7 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
   z-index: 8;
   top: 0;
   left: 50%;
-  width: min(100%, 520px);
+  width: min(100%, 500px);
   min-height: calc(58px + env(safe-area-inset-top));
   display: flex;
   justify-content: center;
@@ -87,9 +89,8 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
   z-index: 1;
   display: flex;
   flex-direction: column-reverse;
-  width: 100vw;
+  width: 100%;
   height: 5000px;
-  margin-left: calc(50% - 50vw);
   background-color: var(--grass);
   background-image: url("images/road.jpg");
   background-position: center top;
@@ -411,7 +412,7 @@ button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 .intro-reopen {
   position: fixed;
   z-index: 9;
-  right: 18px;
+  right: max(18px, calc((100vw - 500px) / 2 + 18px));
   bottom: calc(env(safe-area-inset-bottom) + 18px);
   width: 70px;
   height: 70px;
